@@ -1,11 +1,8 @@
-import './App.css'
-import { Button } from './components/ui/button'
+import "./App.css";
+import AppRoutes from "../routes";
 
 function App() {
-
-  return (
-   <Button>C</Button>
-  )
+  return <AppRoutes />;
 }
 
-export default App
+export default App;
