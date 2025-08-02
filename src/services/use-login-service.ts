@@ -1,4 +1,4 @@
-import { http } from "@/config/http-mode"
+import { http } from "@/config/http-model"
 
 export default function useLoginService() {
   const login = (email: string, password: string) => {
