@@ -1,6 +1,6 @@
 # 💸 Painel Financeiro Pessoal
 
-Um sistema de controle financeiro pessoal com gráficos, cadastro e listagem de despesas, visualização de saldo e login com autenticação via token (cookies). Desenvolvido em **React + Ant Design + TypeScript** no frontend, com backend em **Fastify + Prisma + PostgreSQL**.
+fintrak é sistema de controle financeiro pessoal com gráficos, cadastro e listagem de despesas, visualização de saldo e login com autenticação via token (cookies). Desenvolvido em **React + Ant Design + TypeScript** no frontend, com backend em **Fastify + Prisma + PostgreSQL**.
 
 ---
 
