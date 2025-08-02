@@ -2,7 +2,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import z from "zod";
 
-export default function LoginHookForm(){
+export default function useLoginHookForm(){
+
     const squemaForm = z.object({
       email: z.email("Email inválido"),
       password: z.string().min(1, "A senha é obrigatória"),
