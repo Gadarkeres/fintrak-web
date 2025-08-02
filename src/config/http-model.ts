@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { toast } from "sonner";
 
 export const http = axios.create({
@@ -9,8 +9,8 @@ http.interceptors.response.use(
   (response) => {
     return response;
   },
-  (error) => {
-    toast.error("Ocorreu um erro ao realizar a operação");
+  (error: AxiosError) => {
+    toast.error("Ocorreu um erro ao realizar a operação com o código: " + error.status);
     return Promise.reject(error);
   }
 );
