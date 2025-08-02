@@ -63,9 +63,9 @@ Fintrak é um sistema de controle financeiro pessoal com gráficos, cadastro e l
 
 - [Vite](https://vitejs.dev/)
 - [React + TypeScript](https://react.dev/)
-- [Ant Design (antd)](https://ant.design/)
 - \[React Router DOM]
-- \[Zustand] para estado global (ex: usuário logado, despesas carregadas)
+- \[shadcn/ui]
+- \[Zustand] para estado global (ex: usuário logado)
 - \[Chart.js] ou \[Recharts] para gráficos
 - \[React Hook Form + Zod] para formulários
 - \[js-cookie] para manipulação de cookies
@@ -81,34 +81,9 @@ Fintrak é um sistema de controle financeiro pessoal com gráficos, cadastro e l
 
 ---
 
-## 🗂 Estrutura Inicial de Pastas (Frontend)
-
-```
-src/
-├── components/
-├── pages/
-├── services/
-├── store/ (zustand)
-├── utils/
-├── App.tsx
-└── main.tsx
-```
-
----
-
 ## 🚀 Como Rodar Localmente
 
 **Em breve**: instruções para clonar e rodar o frontend + backend.
-
----
-
-## 📌 To-do imediato
-
-- [ ] Criar layout com Header + abas
-- [ ] Implementar tema dark (AntD Custom Theme)
-- [ ] Mockar lista de despesas
-- [ ] Criar UI dos formulários e das tabelas
-- [ ] Criar estrutura inicial do backend com Express e Prisma
 
 ---
 
