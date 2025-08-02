@@ -15,7 +15,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import useLoginHookForm from "./use-login-hook-form";
+import useLoginHookForm from "./hooks/use-login-hook-form";
 
 export default function Login() {
   const { form, submit } = useLoginHookForm();
