@@ -5,7 +5,7 @@ import {
   DialogTitle,
   DialogDescription,
   DialogFooter,
-  DialogHeader
+  DialogHeader,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -29,8 +29,14 @@ export default function ModalVisitor({ open, setOpen }) {
   });
 
   const submit = (data: z.infer<typeof squemaForm>) => {
-    const result = squemaForm.parse(data);
-    setUser({ name: result.name, email: "", password: "", id: 0, isLogged: false});
+    setUser({
+      name: data.name,
+      email: "",
+      password: "",
+      id: 0,
+      isLogged: false,
+    });
+    setOpen(false);
   };
 
   return (
@@ -46,21 +52,25 @@ export default function ModalVisitor({ open, setOpen }) {
         </DialogHeader>
         <DialogFooter>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(submit)}>
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) =>
-                  Input({
-                    ...field,
-                    placeholder: "Nome de usuário",
-                  })
-                }
-              />
-              <FormMessage>{form.formState.errors?.name?.message}</FormMessage>
+            <form onSubmit={form.handleSubmit(submit)} className="flex gap-3">
+              <div>
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) =>
+                    Input({
+                      ...field,
+                      placeholder: "Nome de usuário",
+                    })
+                  }
+                />
+                <FormMessage>
+                  {form.formState.errors?.name?.message}
+                </FormMessage>
+              </div>
+              <Button type="submit">Entrar</Button>
             </form>
           </Form>
-          <Button type="submit">Entrar</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

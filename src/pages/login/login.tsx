@@ -21,7 +21,7 @@ import { useState } from "react";
 
 export default function Login() {
   const { form, submit } = useLoginHookForm();
-  const [isVisitorModalOpen, setVisitorModalOpen] = useState(false);
+  const [isVisitorModalOpen, setIsVisitorModalOpen] = useState(false);
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">
@@ -29,7 +29,7 @@ export default function Login() {
         <CardHeader>
           <CardTitle>Login</CardTitle>
           <CardAction>
-            <Button variant={"link"} onClick={() => setVisitorModalOpen(true)}>
+            <Button variant={"link"} onClick={() => setIsVisitorModalOpen(true)}>
               Ou entre como visitante
             </Button>
           </CardAction>
@@ -78,7 +78,7 @@ export default function Login() {
           </Form>
         </CardContent>
       </Card>
-      <ModalVisitor open={isVisitorModalOpen} setOpen={setVisitorModalOpen} />
+      <ModalVisitor open={isVisitorModalOpen} setOpen={setIsVisitorModalOpen} />
     </div>
   );
 }
