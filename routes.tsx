@@ -9,19 +9,19 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/" Component={Login} />
-      </Routes>
-      <Route
-        path="/dashboard"
-        element={
-          <RequireAuth>
-            <Dashboard />
-          </RequireAuth>
-        }
-      >
-        {/* <Route path="despesas" element={<DespesasList />} />
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          {/* <Route path="despesas" element={<DespesasList />} />
           <Route path="graficos" element={<Graficos />} />
           <Route path="cadastro" element={<CadastroDespesa />} /> */}
-      </Route>
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }
