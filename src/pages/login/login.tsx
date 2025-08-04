@@ -16,9 +16,12 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import useLoginHookForm from "./hooks/use-login-hook-form";
+import ModalVisitor from "./modal-visitor";
+import { useState } from "react";
 
 export default function Login() {
   const { form, submit } = useLoginHookForm();
+  const [isVisitorModalOpen, setVisitorModalOpen] = useState(false);
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">
@@ -26,7 +29,9 @@ export default function Login() {
         <CardHeader>
           <CardTitle>Login</CardTitle>
           <CardAction>
-            <Button variant={"link"}>Ou entre como visitante</Button>
+            <Button variant={"link"} onClick={() => setVisitorModalOpen(true)}>
+              Ou entre como visitante
+            </Button>
           </CardAction>
         </CardHeader>
         <CardContent>
@@ -73,6 +78,7 @@ export default function Login() {
           </Form>
         </CardContent>
       </Card>
+      <ModalVisitor open={isVisitorModalOpen} setOpen={setVisitorModalOpen} />
     </div>
   );
 }

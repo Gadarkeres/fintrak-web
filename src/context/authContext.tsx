@@ -4,7 +4,8 @@ interface User {
   name: string,
   email: string,
   password: string,
-  id: string
+  id: number,
+  isLogged: boolean
 }
 
 interface AuthContextType {
