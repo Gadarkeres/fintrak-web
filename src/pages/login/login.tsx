@@ -15,10 +15,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import LoginHookForm from "./login-hook-form";
+import useLoginHookForm from "./hooks/use-login-hook-form";
 
 export default function Login() {
-  const { form, submit } = LoginHookForm();
+  const { form, submit } = useLoginHookForm();
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">
