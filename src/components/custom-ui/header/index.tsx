@@ -1,3 +1,6 @@
+import { useAuthStore } from "@/context/useAuthStore";
+
 export default function Header() {
-  return <div>Header</div>;
+  const user = useAuthStore((state) => state.user);
+  return <div>Olá, {user?.name}</div>;
 }

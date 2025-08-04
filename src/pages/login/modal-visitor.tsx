@@ -1,4 +1,3 @@
-import { useAuth } from "@/context/authContext";
 import {
   Dialog,
   DialogContent,
@@ -13,9 +12,12 @@ import { Form, FormField, FormMessage } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { useAuthStore } from "@/context/useAuthStore";
 
 export default function ModalVisitor({ open, setOpen }) {
-  const { setUser } = useAuth();
+  const navigate = useNavigate();
+  const setUser = useAuthStore((state) => state.setUser);
 
   const squemaForm = z.object({
     name: z.string().min(1, "O nome de usuário é obrigatório"),
@@ -37,6 +39,7 @@ export default function ModalVisitor({ open, setOpen }) {
       isLogged: false,
     });
     setOpen(false);
+    navigate("/dashboard");
   };
 
   return (
