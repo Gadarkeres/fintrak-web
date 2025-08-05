@@ -5,12 +5,10 @@ import App from "./App.tsx";
 import { ThemeProvider } from "./components/theme-provider.tsx";
 import { Toaster } from "sonner";
 import { CheckCircle, XCircle, Info, AlertTriangle } from "lucide-react";
-import { AuthProvider } from "./context/authContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <AuthProvider>
       <App />
       <Toaster
         richColors
@@ -22,7 +20,6 @@ createRoot(document.getElementById("root")!).render(
           warning: <AlertTriangle />,
         }}
       />
-      </AuthProvider>
     </ThemeProvider>
   </StrictMode>
 );
