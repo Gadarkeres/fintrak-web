@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/sidebar";
 import { useAuthStore } from "@/context/useAuthStore";
 import DropdownMenuUser from "../dashboard-header/dropdown-menu-user";
+import { useLocation } from "react-router-dom";
 
 const items = [
   {
@@ -39,6 +40,11 @@ const items = [
 
 export function AppSidebarContent() {
   const { user } = useAuthStore();
+  const {pathname} = useLocation();
+
+  const isActive =  (url:string):boolean => {
+    return pathname === url;
+  }
 
   return (
     <>
@@ -51,7 +57,7 @@ export function AppSidebarContent() {
                 <SidebarMenu>
                   {items.map((item) => (
                     <SidebarMenuItem key={item.title}>
-                      <SidebarMenuButton asChild>
+                      <SidebarMenuButton isActive={isActive(item.url)} asChild>
                         <a href={item.url}>
                           <item.icon />
                           <span>{item.title}</span>
