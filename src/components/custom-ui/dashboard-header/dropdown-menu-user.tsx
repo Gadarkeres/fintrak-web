@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@/components/ui/sidebar";
 import { useAuthStore } from "@/context/useAuthStore";
-import { ChevronUp, User2 } from "lucide-react";
+import { ChevronUp, User2, LogOut } from "lucide-react";
 
 export default function DropdownMenuUser() {
   const { logout } = useAuthStore();
@@ -27,7 +27,7 @@ export default function DropdownMenuUser() {
                   className="w-[--radix-popper-anchor-width]"
                 >
                   <DropdownMenuItem asChild>
-                    <span onClick={() => logout()}>Sair</span>
+                    <span onClick={() => logout()}> <LogOut/>Sair</span>
                   </DropdownMenuItem>
                   <DropdownMenuItem >
                     <span>+ Adicionar saldo</span>
