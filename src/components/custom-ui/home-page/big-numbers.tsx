@@ -6,7 +6,7 @@ export default function BigNumbersHome() {
   const {user} = useAuthStore();
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
       <Card className="w-full h-40 flex flex-col items-center justify-center p-5">
         <CardDescription className="text-base">
           Total gasto este mês
