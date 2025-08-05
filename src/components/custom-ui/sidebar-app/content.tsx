@@ -1,8 +1,9 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+import {Home, Table2Icon, PlusIcon, LayoutDashboard } from "lucide-react";
 
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -11,32 +12,28 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { useAuthStore } from "@/context/useAuthStore";
+import DropdownMenuUser from "../dashboard-header/dropdown-menu-user";
 
 const items = [
   {
     title: "Home",
-    url: "#",
+    url: "/dashboard",
     icon: Home,
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Despesas",
+    url: "/dashboard/despesas",
+    icon: Table2Icon,
+  },  
+  {
+    title: "Relatórios",
+    url: "/dashboard/relatorios",
+    icon: LayoutDashboard,
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Criar Despesa",
+    url: "/dashboard/cadastro",
+    icon: PlusIcon,
   },
 ];
 
@@ -62,10 +59,14 @@ export function AppSidebarContent() {
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                   ))}
+                            
                 </SidebarMenu>
               </SidebarGroupContent>
             </SidebarGroup>
           </SidebarContent>
+          <SidebarFooter>
+           <DropdownMenuUser />
+          </SidebarFooter>
         </Sidebar>
       ) : null}
     </>

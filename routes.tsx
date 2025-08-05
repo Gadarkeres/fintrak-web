@@ -18,7 +18,7 @@ export default function AppRoutes() {
           }
         >
           {/* <Route path="/dashboard/despesas" element={<DespesasList />} />
-          <Route path="/dashboard/graficos" element={<Graficos />} />
+          <Route path="/dashboard/relatorios" element={<Relatorios />} />
           <Route path="/dashboard/cadastro" element={<CadastroDespesa />} /> */}
         </Route>
       </Routes>
