@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardAction, CardHeader, CardTitle } from "@/components/ui/card";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { useAuthStore } from "@/context/useAuthStore";
-import useChangeTheme from "@/pages/login/hooks/use-change-theme";
+import useChangeTheme from "@/hooks/use-change-theme";
 import { Github, MoonIcon, SunIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 export default function DashboardHeader() {

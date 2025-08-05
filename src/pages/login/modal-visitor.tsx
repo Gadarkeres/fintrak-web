@@ -37,6 +37,7 @@ export default function ModalVisitor({ open, setOpen }) {
       password: "",
       id: 0,
       isLogged: false,
+      balance: 0
     });
     setOpen(false);
     navigate("/dashboard");

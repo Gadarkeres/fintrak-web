@@ -4,10 +4,6 @@ export default function HomePage() {
   return (
     <>
       <BigNumbersHome/>
-
-      <div>
-
-      </div>
     </>
   );
 }

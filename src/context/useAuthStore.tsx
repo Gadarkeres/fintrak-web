@@ -7,6 +7,7 @@ interface User {
   password: string;
   id: number;
   isLogged: boolean;
+  balance: number;
 }
 
 interface AuthStore {

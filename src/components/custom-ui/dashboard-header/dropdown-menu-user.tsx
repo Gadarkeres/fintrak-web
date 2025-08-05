@@ -29,6 +29,9 @@ export default function DropdownMenuUser() {
                   <DropdownMenuItem asChild>
                     <span onClick={() => logout()}>Sair</span>
                   </DropdownMenuItem>
+                  <DropdownMenuItem >
+                    <span>+ Adicionar saldo</span>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </SidebarMenuItem>
