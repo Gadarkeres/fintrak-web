@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "@/pages/login/login";
 
 import RequireAuth from "@/components/custom-ui/require-auth";
-import Dashboard from "@/pages/dashboard/index";
+import Dashboard from "@/pages/dashboard";
 
 export default function AppRoutes() {
   return (

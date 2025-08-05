@@ -21,7 +21,6 @@ export default function DashboardHeader() {
         <CardTitle>Olá, {user?.name}</CardTitle>
         <CardDescription>Seja bem-vindo(a)</CardDescription>
         <CardAction>
-          
           <div className="flex items-center gap-2">
             <Link to="/dashboard/despesas">
               <Button variant={isActive("/dashboard/despesas") ? "secondary" : "ghost"}>Despesas</Button>
