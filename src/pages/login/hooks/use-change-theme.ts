@@ -1,4 +1,4 @@
-import { useTheme } from "@/components/theme-provider";
+import { useTheme } from "@/config/theme-provider";
 
 export default function useChangeTheme() {
  const { setTheme, theme } = useTheme();

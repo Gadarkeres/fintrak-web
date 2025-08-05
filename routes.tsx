@@ -5,6 +5,7 @@ import RequireAuth from "@/components/custom-ui/require-auth";
 import Dashboard from "@/pages/dashboard";
 import { AppSidebar } from "@/components/custom-ui/sidebar-app";
 import { SidebarProvider } from "@/components/ui/sidebar";
+import HomePage from "@/components/custom-ui/home-page";
 
 export default function AppRoutes() {
   return (
@@ -22,9 +23,7 @@ export default function AppRoutes() {
               </RequireAuth>
             }
           >
-            {/* <Route path="/dashboard/despesas" element={<DespesasList />} />
-          <Route path="/dashboard/relatorios" element={<Relatorios />} />
-          <Route path="/dashboard/cadastro" element={<CadastroDespesa />} /> */}
+            <Route path="/dashboard" Component={HomePage}  />
           </Route>
         </Routes>
       </SidebarProvider>
