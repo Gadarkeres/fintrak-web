@@ -49,7 +49,7 @@ export function AppSidebarContent() {
   return (
     <>
       {user?.name ? (
-        <Sidebar>
+        <Sidebar collapsible="icon">
           <SidebarContent>
             <SidebarGroup>
               <SidebarGroupLabel>Fintrak</SidebarGroupLabel>

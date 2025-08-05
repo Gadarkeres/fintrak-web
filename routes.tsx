@@ -10,7 +10,7 @@ import HomePage from "@/components/custom-ui/home-page";
 export default function AppRoutes() {
   return (
     <BrowserRouter>
-      <SidebarProvider defaultOpen>
+      <SidebarProvider>
         <AppSidebar />
 
         <Routes>

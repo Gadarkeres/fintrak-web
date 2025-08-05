@@ -11,7 +11,7 @@ export default function DashboardHeader() {
 
   return (
     <Card className="@container/card-header rounded-none relative">
-      <div className="absolute top-0 left-0">
+      <div className="absolute bottom-0 left-0">
         <SidebarTrigger />
       </div>
       <CardHeader>
