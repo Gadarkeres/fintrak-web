@@ -9,10 +9,11 @@ import {
 import { useTheme } from "@/components/theme-provider";
 import { useAuthStore } from "@/context/useAuthStore";
 import { Settings } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function DropdownMenuUser() {
   const { setTheme, theme } = useTheme();
-  const {logout} = useAuthStore();
+  const { logout } = useAuthStore();
 
   const handleTheme = (e: React.MouseEvent) => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -28,9 +29,13 @@ export default function DropdownMenuUser() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-          <button className="p-2 rounded-full focus:outline-none">
-          <Settings className="w-5 h-5" />
-        </button>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="data-[state=open]:bg-accent h-10 w-10"
+        >
+          <Settings />
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>Configurações</DropdownMenuLabel>

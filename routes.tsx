@@ -17,9 +17,9 @@ export default function AppRoutes() {
             </RequireAuth>
           }
         >
-          {/* <Route path="despesas" element={<DespesasList />} />
-          <Route path="graficos" element={<Graficos />} />
-          <Route path="cadastro" element={<CadastroDespesa />} /> */}
+          {/* <Route path="/dashboard/despesas" element={<DespesasList />} />
+          <Route path="/dashboard/graficos" element={<Graficos />} />
+          <Route path="/dashboard/cadastro" element={<CadastroDespesa />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
