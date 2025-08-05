@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "@/pages/login/login";
 
-import Dashboard from "@/pages/dashboard";
 import RequireAuth from "@/components/custom-ui/require-auth";
+import Dashboard from "@/pages/dashboard/index";
 
 export default function AppRoutes() {
   return (
