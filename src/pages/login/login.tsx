@@ -17,11 +17,22 @@ import {
 import { Input } from "@/components/ui/input";
 import useLoginHookForm from "./hooks/use-login-hook-form";
 import ModalVisitor from "./modal-visitor";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuthStore } from "@/context/useAuthStore";
 
 export default function Login() {
+  const navigator = useNavigate();
+
   const { form, submit } = useLoginHookForm();
   const [isVisitorModalOpen, setIsVisitorModalOpen] = useState(false);
+  const { user } = useAuthStore();
+
+  useEffect(() => {
+    if (user?.name) {
+      navigator("/dashboard");
+    }
+  }, [navigator, user?.name]);
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">
@@ -29,7 +40,10 @@ export default function Login() {
         <CardHeader>
           <CardTitle>Login</CardTitle>
           <CardAction>
-            <Button variant={"link"} onClick={() => setIsVisitorModalOpen(true)}>
+            <Button
+              variant={"link"}
+              onClick={() => setIsVisitorModalOpen(true)}
+            >
               Ou entre como visitante
             </Button>
           </CardAction>
