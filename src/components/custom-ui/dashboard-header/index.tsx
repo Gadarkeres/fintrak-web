@@ -1,24 +1,21 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardAction, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardAction, CardHeader } from "@/components/ui/card";
 import { SidebarTrigger } from "@/components/ui/sidebar";
-import { useAuthStore } from "@/context/useAuthStore";
 import useChangeTheme from "@/hooks/use-change-theme";
 import { MoonIcon, PlusCircle, SunIcon } from "lucide-react";
-import ModalAddBalance from "./modal-add-balance";
 import useAddBalance from "./hooks/use-add-balance";
+import ModalAddBalance from "./modal-add-balance";
 export default function DashboardHeader() {
-  const user = useAuthStore((state) => state.user);
   const { toggle, theme } = useChangeTheme();
   const { addBalance, open, setOpen } = useAddBalance();
 
   return (
     <>
       <Card className="@container/card-header rounded-none relative">
-        <div className="absolute bottom-0 left-0">
+        <div className="absolute top-7 left-2">
           <SidebarTrigger />
         </div>
         <CardHeader>
-          <CardTitle>Olá, {user?.name}</CardTitle>
           <CardAction className="flex gap-1.5">
             <Button
               onClick={() => setOpen(true)}

@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 export default function Dashboard() {
   return (
-      <div className="w-full">
+      <div className="w-full h-full">
       <DashboardHeader />
       <div className="p-6">
         <Outlet /> 
