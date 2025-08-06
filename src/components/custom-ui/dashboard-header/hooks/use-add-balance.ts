@@ -1,19 +1,25 @@
-import { useAuthStore } from "@/context/useAuthStore"
-import useUserAuthenticadhook from "@/hooks/use-user-authenticad"
+import { useAuthStore } from "@/context/useAuthStore";
+import useUserAuthenticadhook from "@/hooks/use-user-authenticad";
+import { useState } from "react";
 
 export default function useAddBalance() {
-  const {isAuthenticad} = useUserAuthenticadhook()
-  const {setUser, user} = useAuthStore();
+  const [open, setOpen] = useState<boolean>(false);
+
+  const { isAuthenticad } = useUserAuthenticadhook();
+  const { setUser, user } = useAuthStore();
   const addBalance = (value: number) => {
-    if(!isAuthenticad() && user){
+    if (!isAuthenticad() && user) {
       const userUpdated = user;
       userUpdated.balance = user.balance + value;
-     return setUser(userUpdated)
+      setOpen(false);
+      return setUser(userUpdated);
     }
 
-    /* chama api */ 
-
-
-  }
-  return addBalance;
+    /* chama api */
+  };
+  return {
+    addBalance,
+    open,
+    setOpen,
+  };
 }

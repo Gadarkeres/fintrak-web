@@ -4,3 +4,7 @@ export const formatCurrency = (value:number) => {
     value
   )
 }
+
+export const removeCurrencyMask = (value: string) => {
+  return parseFloat(value.replace(/[^\d,-]/g, "").replace(",", "."));
+};

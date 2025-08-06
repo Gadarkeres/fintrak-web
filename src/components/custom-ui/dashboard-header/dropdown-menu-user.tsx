@@ -27,7 +27,7 @@ export default function DropdownMenuUser() {
                   className="w-[--radix-popper-anchor-width]"
                 >
                   <DropdownMenuItem asChild>
-                    <span onClick={() => logout()}> <LogOut/>Sair</span>
+                    <span onClick={logout}> <LogOut/>Sair</span>
                   </DropdownMenuItem>
                   <DropdownMenuItem >
                     <span>+ Adicionar saldo</span>
