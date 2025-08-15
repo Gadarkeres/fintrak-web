@@ -11,11 +11,10 @@ createRoot(document.getElementById("root")!).render(
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <App />
         <Toaster
-          richColors
           closeButton
           icons={{
-            success: <CheckCircle />,
-            error: <XCircle />,
+            success: <CheckCircle color="green" />,
+            error: <XCircle color="red" />,
             info: <Info />,
             warning: <AlertTriangle />,
           }}
