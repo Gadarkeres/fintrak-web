@@ -2,7 +2,7 @@ import axios, { AxiosError } from "axios";
 import { toast } from "sonner";
 
 export const http = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: `${import.meta.env.VITE_API_BASE_PATH}`, 
 });
 
 http.interceptors.response.use(

@@ -20,11 +20,12 @@ import ModalVisitor from "./modal-visitor";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "@/context/useAuthStore";
+import { Loader2 } from "lucide-react";
 
 export default function Login() {
   const navigator = useNavigate();
 
-  const { form, submit } = useLoginHookForm();
+  const { form, submit, isLoading } = useLoginHookForm();
   const [isVisitorModalOpen, setIsVisitorModalOpen] = useState(false);
   const { user } = useAuthStore();
 
@@ -87,7 +88,10 @@ export default function Login() {
                   </FormItem>
                 )}
               />
-              <Button type="submit">Entrar</Button>
+              <Button type="submit" disabled={isLoading}>
+                {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                {isLoading ? "Entrando..." : "Entrar"}
+              </Button>
             </form>
           </Form>
         </CardContent>

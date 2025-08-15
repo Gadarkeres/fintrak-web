@@ -26,7 +26,7 @@ export default function DropdownMenuUser() {
                   side="top"
                   className="w-[--radix-popper-anchor-width]"
                 >
-                  <DropdownMenuItem asChild>
+                  <DropdownMenuItem asChild variant="destructive">
                     <span onClick={logout}> <LogOut/>Sair</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
