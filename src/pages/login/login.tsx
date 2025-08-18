@@ -15,8 +15,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import useLoginHookForm from "./hooks/use-login-hook-form";
-import ModalVisitor from "./modal-visitor";
+import useLoginHookForm from "../login/hooks/use-login-hook-form";
+import ModalVisitor from "../login/modal-visitor";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "@/context/useAuthStore";
@@ -88,10 +88,15 @@ export default function Login() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" disabled={isLoading}>
-                {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                {isLoading ? "Entrando..." : "Entrar"}
-              </Button>
+              <div className="flex justify-between flex-reverse">
+                <Button onClick={() => navigator("/register")} type="button" variant="outline" disabled={isLoading}>Registre-se</Button>
+                <Button type="submit" disabled={isLoading}>
+                  {isLoading && (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  )}
+                  {isLoading ? "Entrando..." : "Entrar"}
+                </Button>
+              </div>
             </form>
           </Form>
         </CardContent>
