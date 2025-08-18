@@ -34,7 +34,6 @@ export default function ModalVisitor({ open, setOpen }) {
     setUser({
       name: data.name,
       email: "",
-      password: "",
       id: 0,
       isLoggedIn: false,
       balance: 0
