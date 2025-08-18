@@ -1,12 +1,11 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-interface User {
+export interface User {
   name: string;
   email: string;
-  password: string;
   id: number;
-  isLogged: boolean;
+  isLoggedIn: boolean;
   balance: number;
 }
 

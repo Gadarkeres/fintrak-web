@@ -4,7 +4,7 @@ export default function useUserAuthenticadhook() {
   const { user } = useAuthStore();
 
   const isAuthenticad = () => {
-    if (!user?.isLogged) {
+    if (!user?.isLoggedIn) {
       return false;
     }
     return true;

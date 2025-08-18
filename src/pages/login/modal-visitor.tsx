@@ -36,7 +36,7 @@ export default function ModalVisitor({ open, setOpen }) {
       email: "",
       password: "",
       id: 0,
-      isLogged: false,
+      isLoggedIn: false,
       balance: 0
     });
     setOpen(false);
