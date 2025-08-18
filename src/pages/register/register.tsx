@@ -95,7 +95,7 @@ export default function Register() {
                     <FormLabel>Confirme a senha</FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="Crie uma senha segura"
+                        placeholder="Confirme sua senha"
                         type="password"
                         {...field}
                       />
