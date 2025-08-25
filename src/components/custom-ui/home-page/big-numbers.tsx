@@ -18,7 +18,7 @@ export default function BigNumbersHome() {
           Total gasto este mês
         </CardDescription>
         <CardTitle className="text-3xl font-bold">
-          {formatCurrency(200)}
+          {formatCurrency(0)}
         </CardTitle>
       </Card>
       <Card className="w-full h-40 flex flex-col items-center justify-center p-5">
@@ -26,14 +26,14 @@ export default function BigNumbersHome() {
           Contas a pagar este mês
         </CardDescription>
         <CardTitle className="text-3xl font-bold">
-          {formatCurrency(100)}
+          {formatCurrency(0)}
         </CardTitle>
       </Card>
 
       <Card className="w-full h-40 flex flex-col items-center justify-center p-5">
         <CardDescription className="text-base">Vencem Hoje</CardDescription>
         <CardTitle className="text-3xl font-bold">
-          {formatCurrency(1500)}
+          {formatCurrency(0)}
         </CardTitle>
       </Card>
     </div>
