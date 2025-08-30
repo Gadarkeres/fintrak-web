@@ -89,7 +89,7 @@ export default function Login() {
                 )}
               />
               <div className="flex justify-between flex-reverse">
-                <Button onClick={() => navigator("/register")} type="button" variant="outline" disabled={isLoading}>Registre-se</Button>
+                <Button onClick={() => navigator("/register")} type="button" variant="outline" /*disabled={isLoading}*/ disabled={true} title="Em breve!">Registre-se</Button>
                 <Button type="submit" disabled={isLoading}>
                   {isLoading && (
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
