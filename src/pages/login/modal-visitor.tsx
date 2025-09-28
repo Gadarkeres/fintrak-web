@@ -34,9 +34,9 @@ export default function ModalVisitor({ open, setOpen }) {
     setUser({
       name: data.name,
       email: "",
-      password: "",
       id: 0,
-      isLogged: false,
+      isLoggedIn: false,
+      balance: 0
     });
     setOpen(false);
     navigate("/dashboard");

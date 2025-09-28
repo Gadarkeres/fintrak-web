@@ -15,13 +15,25 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import useLoginHookForm from "./hooks/use-login-hook-form";
-import ModalVisitor from "./modal-visitor";
-import { useState } from "react";
+import useLoginHookForm from "../login/hooks/use-login-hook-form";
+import ModalVisitor from "../login/modal-visitor";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuthStore } from "@/context/useAuthStore";
+import { Loader2 } from "lucide-react";
 
 export default function Login() {
-  const { form, submit } = useLoginHookForm();
+  const navigator = useNavigate();
+
+  const { form, submit, isLoading } = useLoginHookForm();
   const [isVisitorModalOpen, setIsVisitorModalOpen] = useState(false);
+  const { user } = useAuthStore();
+
+  useEffect(() => {
+    if (user?.name) {
+      navigator("/dashboard");
+    }
+  }, [navigator, user?.name]);
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">
@@ -29,7 +41,10 @@ export default function Login() {
         <CardHeader>
           <CardTitle>Login</CardTitle>
           <CardAction>
-            <Button variant={"link"} onClick={() => setIsVisitorModalOpen(true)}>
+            <Button
+              variant={"link"}
+              onClick={() => setIsVisitorModalOpen(true)}
+            >
               Ou entre como visitante
             </Button>
           </CardAction>
@@ -73,7 +88,15 @@ export default function Login() {
                   </FormItem>
                 )}
               />
-              <Button type="submit">Entrar</Button>
+              <div className="flex justify-between flex-reverse">
+                <Button onClick={() => navigator("/register")} type="button" variant="outline" /*disabled={isLoading}*/ disabled={true} title="Em breve!">Registre-se</Button>
+                <Button type="submit" disabled={isLoading}>
+                  {isLoading && (
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  )}
+                  {isLoading ? "Entrando..." : "Entrar"}
+                </Button>
+              </div>
             </form>
           </Form>
         </CardContent>
